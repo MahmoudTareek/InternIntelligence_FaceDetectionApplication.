@@ -54,8 +54,7 @@ class _Live_Detection_SStatecreen extends State<Live_Detection_Screen> {
         (camera) => camera.lensDirection == CameraLensDirection.front,
       );
       if (_selectedCameraIndex == -1) {
-        _selectedCameraIndex =
-            0; // Default to the first camera if no front camera found
+        _selectedCameraIndex = 1;
       }
       await _initializeCamera(cameras[_selectedCameraIndex]);
     } catch (e) {
@@ -65,7 +64,6 @@ class _Live_Detection_SStatecreen extends State<Live_Detection_Screen> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     _cameraController?.dispose();
     _faceDetector.close();
     super.dispose();
@@ -157,7 +155,7 @@ class _Live_Detection_SStatecreen extends State<Live_Detection_Screen> {
     }
 
     _cameraController!.startImageStream((CameraImage image) async {
-      if (isDetecting) return; // Prevent multiple detections at once
+      if (isDetecting) return;
       isDetecting = true;
       final inputImage = _convertCameraImageToInputImage(image);
       if (inputImage == null) {
@@ -179,21 +177,14 @@ class _Live_Detection_SStatecreen extends State<Live_Detection_Screen> {
         isDetecting = false;
       }
     });
-
-    @override
-    Widget build(BuildContext context) {
-      return Scaffold();
-    }
   }
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: AppBar(
         title: const Text('Live Camera Detection'),
         actions: [
-          // if (cameras.length > 1)
           IconButton(
             icon: const Icon(
               CupertinoIcons.switch_camera,

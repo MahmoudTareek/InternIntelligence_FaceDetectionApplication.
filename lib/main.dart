@@ -1,4 +1,3 @@
-import 'package:face_detection_application/live_face_detection_screen.dart';
 import 'package:face_detection_application/home_screen.dart';
 import 'package:flutter/material.dart';
 

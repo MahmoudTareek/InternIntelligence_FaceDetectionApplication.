@@ -27,14 +27,8 @@ class FaceDetectionPainter extends CustomPainter {
     final Paint landmarkPaint =
         Paint()
           ..style = PaintingStyle.fill
-          // ..style = PaintingStyle.stroke
           ..strokeWidth = 5.0
           ..color = Colors.red;
-
-    // final Paint textBackgroundPaint =
-    //     Paint()
-    //       ..style = PaintingStyle.fill
-    //       ..color = Colors.black54;
 
     for (var i = 0; i < faces.length; i++) {
       final Face face = faces[i];
@@ -73,51 +67,6 @@ class FaceDetectionPainter extends CustomPainter {
       drawLandmarks(FaceLandmarkType.noseBase);
       drawLandmarks(FaceLandmarkType.leftMouth);
       drawLandmarks(FaceLandmarkType.rightMouth);
-      // drawLandmarks(FaceLandmarkType.bottomMouth);
-
-      // String mood = 'Natural';
-      // final smileProb = face.smilingProbability ?? 0.0;
-      // if (smileProb > 0.5) {
-      //   mood = 'Smiling';
-      // } else if (smileProb > 0.8) {
-      //   mood = 'Laughing';
-      // } else if (smileProb < 0.2) {
-      //   mood = 'Serious';
-      // }
-
-      // final TextSpan faceIdSpan = TextSpan(
-      //   text: 'Face ${i + 1} - $mood',
-      //   style: TextStyle(
-      //     color: Colors.white,
-      //     backgroundColor: Colors.black54,
-      //     fontSize: 16.0,
-      //   ),
-      // );
-
-      // final TextPainter textPainter = TextPainter(
-      //   text: faceIdSpan,
-      //   textDirection: TextDirection.ltr,
-      //   textAlign: TextAlign.center,
-      // );
-
-      // textPainter.layout();
-
-      // final textRect = Rect.fromLTWH(
-      //   left,
-      //   top - textPainter.height - 8.0,
-      //   textPainter.width + 16.0,
-      //   textPainter.height + 8.0,
-      // );
-
-      // canvas.drawRRect(
-      //   RRect.fromRectAndRadius(textRect, Radius.circular(10.0)),
-      //   textBackgroundPaint,
-      // );
-
-      // textPainter.paint(
-      //   canvas,
-      //   Offset(left + 8.0, top - textPainter.height - 4.0),
-      // );
     }
   }
 
