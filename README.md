@@ -1,8 +1,6 @@
-# face_detection_application
+# Face Detection Flutter Application
 
-A new Flutter project.
-
-## Getting Started
+## Application Features
 
 This project is a starting point for a Flutter application.
 
