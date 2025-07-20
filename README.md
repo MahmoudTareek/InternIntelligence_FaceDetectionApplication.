@@ -16,8 +16,8 @@ Developed a Face Detection Application using Google's ML Kit Face Detection
 
   Black & white images.
 
-  Colsed & open human eyes.
+  Colse & open human eyes.
 
-  People wear glasses.
+  People wearing glasses.
   
   
